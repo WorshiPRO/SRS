@@ -21,5 +21,7 @@ def inputsong(request):
 
 	newsong.save()
 
+	return render(request, 'picksong.html', {'result': Song.objects.all()})
+
 def result(request):
 	return render(request, 'result.html', {'result': Song.objects.all()})
