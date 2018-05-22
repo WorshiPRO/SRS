@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from picksong.views import hello_view
+from picksong.views import picksong
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-	path('hello/', hello_view),
+	path('hello1/', hello_view),
+	path('picksong/', picksong),
 ]
