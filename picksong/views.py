@@ -9,4 +9,4 @@ def picksong(request):
 	return render(request, 'picksong.html')
 
 def result(request):
-	return render(request, 'result.html', {'data': Song.objects.all()})
+	return render(request, 'result.html', {'result': Song.objects.all()})
