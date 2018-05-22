@@ -6,7 +6,7 @@ def hello_view(request):
 	return render(request, 'hello.html', {'data': "Hello Django ",})
 
 def picksong(request):
-	return render(request, 'picksong.html', {'data': Song.objects.all()})
+	return render(request, 'picksong.html', {'result': Song.objects.all()})
 
 def result(request):
 	return render(request, 'result.html', {'result': Song.objects.all()})
