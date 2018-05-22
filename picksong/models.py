@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Picksong(models.Model):
+class Song(models.Model):
 	song = models.TextField(default="song")
 	owner = models.TextField(default="owner")
 	key_of_song = models.TextField(default="Bb")
