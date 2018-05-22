@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 	path('hello1/', hello_view),
 	path('picksong/', picksong),
+    path('inputsong/', inputsong),
 ]
