@@ -126,7 +126,15 @@
 				        </button>
 				      </div>
 				      <div class="modal-body">
-								{{result}}
+								{% for song in result %}
+							    <div>
+							    {{ song.id }}
+							    {{ song.song }}
+							    {{ song.owner }}
+									{{ song.key_of_song }}
+							    {{ song.submission_date }}
+							    </div>
+								{% endfor %}
 				      </div>
 				      <div class="modal-footer">
 				      </div>
