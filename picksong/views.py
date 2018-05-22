@@ -9,17 +9,17 @@ def picksong(request):
 	return render(request, 'picksong.html', {'result': Song.objects.all()})
 
 def inputsong(request):
-	newsong = Song()
-	newsong.name = request.POST['songname']
-	newsong.owner = request.POST['band']
-	if request.POST['key'] is not None:
-		newsong.key_of_song = request.POST['key']
-	if request.POST['highest'] is not None:
-		newsong.highest_note = request.POST['highest']
-	if request.POST['lowest'] is not None:
-		newsong.lowest_note = request.POST['lowest']
-
-	newsong.save()
+	if request.method == 'POST':
+		newsong = Song()
+		newsong.name = request.POST['songname']
+		newsong.owner = request.POST['band']
+		if request.POST['key'] is not None:
+			newsong.key_of_song = request.POST['key']
+		if request.POST['highest'] is not None:
+			newsong.highest_note = request.POST['highest']
+		if request.POST['lowest'] is not None:
+			newsong.lowest_note = request.POST['lowest']
+		newsong.save()
 
 	return render(request, 'picksong.html', {'result': Song.objects.all()})
 
