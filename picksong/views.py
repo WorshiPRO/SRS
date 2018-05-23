@@ -19,7 +19,7 @@ def inputsong(request):
 		newsong.highest_note = request.POST.get("highest", "n")
 		newsong.lowest_note = request.POST.get("lowest", "n")
 		#if newsong.name is not "sad":
-			newsong.save()
+		newsong.save()
 
 	#return redirect('/')
 	return render(request, 'picksong.html', {'result': Song.objects.all()})
