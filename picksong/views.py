@@ -6,9 +6,6 @@ from .models import Song
 def hello_view(request):
 	return render(request, 'hello.html', {'data': "Hello Django ",})
 
-def picksong(request):
-	return render(request, 'picksong.html', {'result': Song.objects.all()})
-
 def inputsong(request):
 	if request.method == 'POST':
 		fo = open("viewslog.out", "w")
@@ -22,8 +19,8 @@ def inputsong(request):
 		if(songname is not "null")
 			newsong.save()
 
-	return redirect('/')
-	#return render(request, 'picksong.html', {'result': Song.objects.all()})
+	#return redirect('/')
+	return render(request, 'picksong.html', {'result': Song.objects.all()})
 
 def result(request):
 	return render(request, 'result.html', {'result': Song.objects.all()})
