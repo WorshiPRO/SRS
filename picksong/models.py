@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Song(models.Model):
-	song = models.TextField()
+	name = models.TextField()
 	owner = models.TextField()
 	key_of_song = models.TextField()
 	highest_note = models.TextField()
