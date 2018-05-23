@@ -18,8 +18,7 @@ def inputsong(request):
 			newsong.key_of_song = form.cleaned_data['key']
 			newsong.highest_note = form.cleaned_data['highest']
 			newsong.lowest_note = form.cleaned_data['lowest']
-			if newsong.name is not "None":
-				newsong.save()
+			newsong.save()
 	else: # get
 		form = SongForm()
 
