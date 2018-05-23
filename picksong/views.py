@@ -8,21 +8,20 @@ def hello_view(request):
 	return render(request, 'hello.html', {'data': "Hello Django ",})
 
 def inputsong(request):
-	# if request.method == 'POST':
-	# 	print("hi!", request.POST)
-	#
-    #     form = SongForm(request.POST)
-    #     if form.is_valid():
-    #         pass  # does nothing, just trigger the validation
-	# else:
-	# 	form = SongForm()
-	form = SongForm()
-	# newsong = Song()
-	# newsong.name = request.POST.get("songname", "sad")
-	# newsong.owner = request.POST.get("band", "too_sad")
-	# newsong.key_of_song = request.POST.get("key", "n")
-	# newsong.highest_note = request.POST.get("highest", "n")
-	# newsong.lowest_note = request.POST.get("lowest", "n")
+
+	if request.method == 'POST':
+		form = SongForm(request.POST)
+		if form.is_valid():
+			newsong = Song()
+			newsong.name = form.cleaned_data['name']
+			newsong.owner = form.cleaned_data['owner']
+			newsong.key_of_song = form.cleaned_data['key']
+			newsong.highest_note = form.cleaned_data['highest']
+			newsong.lowest_note = form.cleaned_data['lowest']
+			if newsong.name is not "None":
+				newsong.save()
+	else: # get
+		form = SongForm()
 
 	arg = {'result': Song.objects.all(), 'form': form}
 	return render(request, 'picksong.html', arg)
