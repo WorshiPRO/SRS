@@ -10,6 +10,7 @@ def picksong(request):
 
 def inputsong(request):
 	if request.method == 'POST':
+		print(request.POST.keys())
 		newsong = Song()
 		newsong.name = request.POST.get("songname", "null")
 		newsong.owner = request.POST.get("band", "null")
