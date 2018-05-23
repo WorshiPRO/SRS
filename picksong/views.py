@@ -21,7 +21,7 @@ def inputsong(request):
 		newsong.lowest_note = request.POST.get("lowest", "n")
 		newsong.save()
 
-	return redirect('')
+	return redirect('/')
 	#return render(request, 'picksong.html', {'result': Song.objects.all()})
 
 def result(request):
