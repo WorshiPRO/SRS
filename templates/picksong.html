@@ -193,12 +193,18 @@
 	<h5 class="mt-5">放入歌曲</h5>  <! 放歌曲>
 	<form class="mt-3" method=post action="" id="inputsong">
 		{% csrf_token %}
-		{{ form.song }}
+		{% for field in form %}
+				<div class="form-group">
+					<!-- <input type="text" class="form-control" id="songname" placeholder="輸入歌曲名" required> -->
+					<label class="form-control" for="songname">{{ field.label }}</label>
+	        {{ field }}
+				</div>
+    {% endfor %}
 		<div class="form-group">
 			<label for="songname">歌曲名稱</label>
 			<input type="text" class="form-control" id="songname" placeholder="輸入歌曲名" required>
 		</div>
-		{{ form.owner }}
+
 		<div class="form-group">
 			<label for="songname">歌手/樂團/教會</label>
 			<input type="text" class="form-control" id="band" placeholder="輸入歌手/樂團/教會" required>
