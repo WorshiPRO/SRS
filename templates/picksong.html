@@ -195,12 +195,10 @@
 		{% csrf_token %}
 		{% for field in form %}
 				<div class="form-group">
-					<!-- <input type="text" class="form-control" id="songname" placeholder="輸入歌曲名" required> -->
-					<!-- <label class="form-control" for="songname">{{ field.label }}</label> -->
 	        {{ field }}
 				</div>
     {% endfor %}
-		<div class="form-group">
+		<!-- <div class="form-group">
 			<label for="songname">歌曲名稱</label>
 			<input type="text" class="form-control" id="songname" placeholder="輸入歌曲名" required>
 		</div>
@@ -209,10 +207,10 @@
 			<label for="songname">歌手/樂團/教會</label>
 			<input type="text" class="form-control" id="band" placeholder="輸入歌手/樂團/教會" required>
 		</div>
-		<!-- <div class="form-group">
+		<div class="form-group">
 			<label for="theme">主題性質</label>
 			<input type="text" class="form-control" id="theme" placeholder="輸入主題性質">
-		</div> -->
+		</div>
 		<div class="form-group">
 			<label for="key">歌曲Key</label>
 			<input type="text" class="form-control" id="key" placeholder="輸入歌曲Key">
@@ -224,7 +222,7 @@
 		<div class="form-group">
 			<label for="bass">歌曲最低音</label>
 			<input type="text" class="form-control" id="lowest" placeholder="輸入歌曲最低音<">
-		</div>
+		</div> -->
 
 		<input class="btn btn-primary" type=submit value=送出>
 		<input class="btn btn-danger" type=reset value="重設" >
