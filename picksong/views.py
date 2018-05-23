@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from .models import Song
 
 # Create your views here.
@@ -20,7 +21,8 @@ def inputsong(request):
 		newsong.lowest_note = request.POST.get("lowest", "n")
 		newsong.save()
 
-	return render(request, 'picksong.html', {'result': Song.objects.all()})
+    return HttpResponseRedirect('')
+	#return render(request, 'picksong.html', {'result': Song.objects.all()})
 
 def result(request):
 	return render(request, 'result.html', {'result': Song.objects.all()})
