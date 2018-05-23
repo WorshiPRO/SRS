@@ -10,7 +10,6 @@ def hello_view(request):
 def inputsong(request):
 	if request.method == 'POST':
 		print("hi!", request.POST)
-
         form = SongForm(request.POST)
         if form.is_valid():
             pass  # does nothing, just trigger the validation
