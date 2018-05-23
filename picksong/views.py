@@ -8,8 +8,10 @@ def hello_view(request):
 
 def inputsong(request):
 	if request.method == 'POST':
-		fo = open("viewslog.out", "w")
-		fo.write(str(request.POST.keys()))
+		#fo = open("viewslog.out", "w")
+		#fo.write(str(request.POST.keys()))
+		print("hi!")
+		print(request.POST)
 		newsong = Song()
 		newsong.name = request.POST.get("songname", "sad")
 		newsong.owner = request.POST.get("band", "too_sad")
