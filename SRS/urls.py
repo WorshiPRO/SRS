@@ -18,7 +18,7 @@ from django.urls import path
 from picksong.views import hello_view
 from picksong.views import inputsong
 urlpatterns = [
-	path('/', picksong),
+	path('/', inputsong),
     path('/admin/', admin.site.urls),
 	path('/hello1/', hello_view),
     path('/inputsong/', inputsong),
