@@ -19,7 +19,7 @@ from picksong.views import hello_view
 from picksong.views import inputsong
 urlpatterns = [
 	path('', inputsong),
-    path('/admin/', admin.site.urls),
-	path('/hello1/', hello_view),
-    path('/inputsong/', inputsong),
+    path('admin/', admin.site.urls),
+	path('hello1/', hello_view),
+    path('inputsong/', inputsong),
 ]
