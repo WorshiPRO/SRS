@@ -18,8 +18,8 @@ def inputsong(request):
 		newsong.key_of_song = request.GET.get("key", "n")
 		newsong.highest_note = request.GET.get("highest", "n")
 		newsong.lowest_note = request.GET.get("lowest", "n")
-		#if newsong.name is not "sad":
-		newsong.save()
+		if newsong.name is not "sad":
+			newsong.save()
 
 	#return redirect('/')
 	arg = {'result': Song.objects.all()}
