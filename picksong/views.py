@@ -11,7 +11,7 @@ def picksong(request):
 def inputsong(request):
 	if request.method == 'POST':
 		fo = open("viewslog.out", "w")
-		fo.write(request.POST.keys())
+		fo.write(str(request.POST.keys()))
 		newsong = Song()
 		newsong.name = request.POST.get("songname", "null")
 		newsong.owner = request.POST.get("band", "null")
