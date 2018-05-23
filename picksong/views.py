@@ -7,22 +7,23 @@ def hello_view(request):
 	return render(request, 'hello.html', {'data': "Hello Django ",})
 
 def inputsong(request):
-	if request.method == 'POST':
+	if request.method == 'GET':
 		#fo = open("viewslog.out", "w")
 		#fo.write(str(request.POST.keys()))
 		print("hi!")
-		print(request.POST)
+		print(request.GET)
 		newsong = Song()
-		newsong.name = request.POST.get("songname", "sad")
-		newsong.owner = request.POST.get("band", "too_sad")
-		newsong.key_of_song = request.POST.get("key", "n")
-		newsong.highest_note = request.POST.get("highest", "n")
-		newsong.lowest_note = request.POST.get("lowest", "n")
+		newsong.name = request.GET.get("songname", "sad")
+		newsong.owner = request.GET.get("band", "too_sad")
+		newsong.key_of_song = request.GET.get("key", "n")
+		newsong.highest_note = request.GET.get("highest", "n")
+		newsong.lowest_note = request.GET.get("lowest", "n")
 		#if newsong.name is not "sad":
 		newsong.save()
 
 	#return redirect('/')
-	return render(request, 'picksong.html', {'result': Song.objects.all()})
+	arg = {'result': Song.objects.all()}
+	return render(request, 'picksong.html', arg)
 
 def result(request):
 	return render(request, 'result.html', {'result': Song.objects.all()})
