@@ -126,18 +126,24 @@
 				        </button>
 				      </div>
 				      <div class="modal-body">
-								<div>
-								歌曲
-								歌手/樂團/教會
-								歌曲Key
-								</div>
-								{% for song in result %}
-							    <div>
-							    {{ song.song }}
-							    {{ song.owner }}
-									{{ song.key_of_song }}
-							    </div>
-								{% endfor %}
+								<table class="table table-striped">
+								  <thead>
+								    <tr>
+								      <th scope="col">歌曲</th>
+								      <th scope="col">歌手/樂團/教會</th>
+								      <th scope="col">歌曲Key</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+										{% for song in result %}
+								    <tr>
+								      <td> {{ song.song }}</td>
+								      <td>{{ song.owner }}</td>
+								      <td>{{ song.key_of_song }}</td>
+								    </tr>
+										{% endfor %}
+								  </tbody>
+								</table>
 				      </div>
 				      <div class="modal-footer">
 				      </div>
