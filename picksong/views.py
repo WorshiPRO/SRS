@@ -34,8 +34,35 @@ def inputsong(request):
 	return render(request, 'picksong.html', arg)
 
 def searchsong(request):
-	for row in Song().objects.all():
-		if row
-	return render(request, 'result.html', {'result': })
+
+	return render(request, 'searchsong.html', {'form': SongForm()})
 
 def result(request):
+	if request.method == 'POST':
+		form = SongForm(request.POST)
+	result = []
+	for row in Song().objects.all():
+		hit = True
+		if form.cleaned_data['name'] != "":
+			if form.cleaned_data['name'] not in row.name:
+				hit = False
+		if form.cleaned_data['owner'] != "":
+			if form.cleaned_data['owner'] not in row.name:
+				hit = False
+		if form.cleaned_data['key'] != "":
+			if form.cleaned_data['key'] != row.key_of_song:
+				hit = False
+		if form.cleaned_data['highest'] != "":
+			if form.cleaned_data['highest'] != row.highest_note:
+				hit = False
+		if form.cleaned_data['lowest'] != "":
+			if form.cleaned_data['lowest'] != row.lowest_note:
+				hit = False
+
+		if hit:
+			result.append(row)
+		# sort somehow (1. in db 2. here)
+
+	n_info = len(result)
+	arg = {'result': result, 'number_of_info' = n_info}
+	return render(request, 'result.html', arg)

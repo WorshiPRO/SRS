@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from picksong.views import hello_view
 from picksong.views import inputsong
+from picksong.views import searchsong
+from picksong.views import result
 
 urlpatterns = [
 	path('', inputsong),

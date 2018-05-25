@@ -118,6 +118,8 @@
 					<th scope="col">歌曲</th>
 					<th scope="col">歌手/樂團/教會</th>
 					<th scope="col">歌曲Key</th>
+					<th scope="col">歌曲最高音</th>
+					<th scope="col">歌曲最低音</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -126,13 +128,16 @@
 					<td>{{ song.song }}</td>
 					<td>{{ song.owner }}</td>
 					<td>{{ song.key_of_song }}</td>
+					<td>{{ song.highest_note }}</td>
+					<td>{{ song.lowest_note }}</td>
 				</tr>
 				{% endfor %}
 			</tbody>
 		</table>
+		<p>共{{number_of_info}}筆資料</p>
 	</div>
 
-	<input class="btn btn-primary" action="searchsong" type=submit value="重新搜尋">
+	<input class="btn btn-primary" action="searchsong" value="重新搜尋">
 
 
 </div>

@@ -14,7 +14,7 @@ class SongForm(forms.Form):
                                       'class': 'form-control',
                                       'placeholder':'輸入歌曲key 例如: G'}))
     highest = forms.CharField(max_length=30,
-        widget=forms.TextInput(attrs={'id': 'highet',
+        widget=forms.TextInput(attrs={'id': 'highest',
                                       'class': 'form-control',
                                       'placeholder':'輸入歌曲最高音 例如: C5(女)'}))
     lowest = forms.CharField(max_length=30,
