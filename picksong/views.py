@@ -24,6 +24,9 @@ def inputsong(request):
 			else:
 				print("Invalid input!")
 				error_msg = '輸入格式錯誤'
+		else:
+			print("Blank input!")
+			error_msg = '請輸入資料'
 	form = SongForm()
 
 
