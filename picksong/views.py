@@ -9,6 +9,7 @@ def hello_view(request):
 
 def inputsong(request):
 	newsong = Song()
+	success_msg = ''
 	error_msg = ''
 	if request.method == 'POST':
 		form = SongForm(request.POST)
@@ -21,6 +22,7 @@ def inputsong(request):
 			if newsong.is_valid():
 				print("Valid Information!")
 				newsong.save()
+				success_msg = '輸入成功'
 			else:
 				print("Invalid input!")
 				error_msg = '輸入格式錯誤'
@@ -30,7 +32,7 @@ def inputsong(request):
 	form = SongForm()
 
 
-	arg = {'result': Song.objects.all(), 'form': form, 'error_msg': error_msg}
+	arg = {'result': Song.objects.all(), 'form': form, 'error_msg': error_msg, 'success_msg': success_msg}
 	return render(request, 'picksong.html', arg)
 
 def searchsong(request):
