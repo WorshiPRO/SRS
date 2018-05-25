@@ -19,8 +19,10 @@ def inputsong(request):
 			newsong.highest_note = form.cleaned_data['highest']
 			newsong.lowest_note = form.cleaned_data['lowest']
 			if newsong.is_valid():
+				print("Valid Information!")
 				newsong.save()
 			else:
+				print("Invalid input!")
 				error_msg = '輸入格式錯誤'
 	form = SongForm()
 
