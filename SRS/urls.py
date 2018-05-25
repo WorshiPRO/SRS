@@ -21,7 +21,7 @@ from picksong.views import searchsong
 from picksong.views import result
 
 urlpatterns = [
-	path('', inputsong, namespace="picksong"),
+	path('', inputsong, names="picksong"),
     path('admin/', admin.site.urls),
 	path('hello/', hello_view),
     path('inputsong/', inputsong),
