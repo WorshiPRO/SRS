@@ -8,22 +8,23 @@ def hello_view(request):
 	return render(request, 'hello.html', {'data': "Hello Django ",})
 
 def inputsong(request):
-
+	newsong = Song()
 	if request.method == 'POST':
 		form = SongForm(request.POST)
 		if form.is_valid():
-			newsong = Song()
 			newsong.name = form.cleaned_data['name']
 			newsong.owner = form.cleaned_data['owner']
 			newsong.key_of_song = form.cleaned_data['key']
 			newsong.highest_note = form.cleaned_data['highest']
 			newsong.lowest_note = form.cleaned_data['lowest']
-			newsong.save()
+			if newsong.is_valid():
+				newsong.save()
 			form = SongForm()
 	else: # get
 		form = SongForm()
 
-	arg = {'result': Song.objects.all(), 'form': form}
+	error_msg = '' if newsong.is_valid() else '輸入格式錯誤'
+	arg = {'result': Song.objects.all(), 'form': form, 'error_msg': error_msg}
 	return render(request, 'picksong.html', arg)
 
 def result(request):
