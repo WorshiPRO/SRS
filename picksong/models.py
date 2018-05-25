@@ -20,16 +20,16 @@ class Song(models.Model):
 				"G", "G#", "Gb",]
 		if key_of_song not in valid_keys:
 			return False
-		else if len(highet_note) is 2:
+		elif len(highet_note) is 2:
 			if highest_note[0] not in valid_keys or int(highest_note[1]) not in range(8):
 				return False
-		else if len(highet_note) is 3:
+		elif len(highet_note) is 3:
 			if highest_note[:2] not in valid_keys or int(highest_note[2]) not in range(8):
 				return False
-		else if len(lowest_note) is 2:
+		elif len(lowest_note) is 2:
 			if lowest_note[0] not in valid_keys or int(lowest_note[1]) not in range(8):
 				return False
-		else if len(lowest_note) is 3:
+		elif len(lowest_note) is 3:
 			if lowest_note[:2] not in valid_keys or int(lowest_note[2]) not in range(8):
 				return False
 		else:
