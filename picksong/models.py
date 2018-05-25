@@ -10,6 +10,9 @@ class Song(models.Model):
 	lowest_note = models.TextField()
 	submission_date = models.DateTimeField(auto_now=True)
 
+	def is_empty(self):
+		return True if self is Song() else False
+
 	def is_valid(self):
 		valid_keys = ["A", "A#", "Ab",
 				"B", "Bb",
