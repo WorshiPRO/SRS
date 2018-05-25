@@ -30,9 +30,12 @@ def inputsong(request):
 	form = SongForm()
 
 
-
 	arg = {'result': Song.objects.all(), 'form': form, 'error_msg': error_msg}
 	return render(request, 'picksong.html', arg)
 
+def searchsong(request):
+	for row in Song().objects.all():
+		if row
+	return render(request, 'result.html', {'result': })
+
 def result(request):
-	return render(request, 'result.html', {'result': Song.objects.all()})
