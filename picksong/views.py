@@ -9,6 +9,7 @@ def hello_view(request):
 
 def inputsong(request):
 	newsong = Song()
+	error_msg = ''
 	if request.method == 'POST':
 		form = SongForm(request.POST)
 		if form.is_valid():
@@ -19,13 +20,11 @@ def inputsong(request):
 			newsong.lowest_note = form.cleaned_data['lowest']
 			if newsong.is_valid():
 				newsong.save()
-				error_msg = ''
 			else:
 				error_msg = '輸入格式錯誤'
 			form = SongForm()
 	else: # get
 		form = SongForm()
-		error_msg = ''
 
 
 
