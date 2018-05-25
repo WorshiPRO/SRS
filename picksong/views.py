@@ -23,7 +23,7 @@ def inputsong(request):
 	else: # get
 		form = SongForm()
 
-	error_msg = '' if newsong.is_valid() and not newsong.is_empty else '輸入格式錯誤'
+	error_msg = '' if newsong.is_valid() and newsong.is_empty() else '輸入格式錯誤'
 	arg = {'result': Song.objects.all(), 'form': form, 'error_msg': error_msg}
 	return render(request, 'picksong.html', arg)
 
