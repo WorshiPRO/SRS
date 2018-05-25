@@ -22,9 +22,7 @@ def inputsong(request):
 				newsong.save()
 			else:
 				error_msg = '輸入格式錯誤'
-			form = SongForm()
-	else: # get
-		form = SongForm()
+	form = SongForm()
 
 
 
