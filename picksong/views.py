@@ -64,5 +64,5 @@ def result(request):
 		# sort somehow (1. in db 2. here)
 
 	n_info = len(result)
-	arg = {'result': result, 'number_of_info' = n_info}
+	arg = {'result': result, 'number_of_info': n_info}
 	return render(request, 'result.html', arg)
