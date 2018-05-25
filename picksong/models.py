@@ -26,7 +26,7 @@ class Song(models.Model):
 		elif len(self.highest_note) is 2:
 			if self.highest_note[0] not in valid_keys or int(self.highest_note[1]) not in range(8):
 				return False
-		elif len(highest_note) is 3:
+		elif len(self.highest_note) is 3:
 			if self.highest_note[:2] not in valid_keys or int(self.highest_note[2]) not in range(8):
 				return False
 		elif len(self.lowest_note) is 2:
