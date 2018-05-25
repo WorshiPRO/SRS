@@ -19,6 +19,7 @@ def inputsong(request):
 			newsong.highest_note = form.cleaned_data['highest']
 			newsong.lowest_note = form.cleaned_data['lowest']
 			newsong.save()
+			form = SongForm()
 	else: # get
 		form = SongForm()
 
