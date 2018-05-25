@@ -45,8 +45,9 @@ class Song(models.Model):
 			if self.lowest_note[:2] not in valid_keys:
 				print("[Error] models.py: lowest_note not found")
 				return False
-		else:
-			return True
+
+		print("[Status] models.py: validation okay")
+		return True
 
 
 	class Meta:
