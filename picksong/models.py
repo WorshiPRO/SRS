@@ -3,11 +3,11 @@ from django.db import models
 # Create your models here.
 
 class Song(models.Model):
-	name = models.TextField()
-	owner = models.TextField()
-	key_of_song = models.TextField()
-	highest_note = models.TextField()
-	lowest_note = models.TextField()
+	name = models.TextField(default='none')
+	owner = models.TextField(default='none')
+	key_of_song = models.TextField(default='none')
+	highest_note = models.TextField(default='none')
+	lowest_note = models.TextField(default='none')
 	submission_date = models.DateTimeField(auto_now=True)
 
 	def is_empty(self):
