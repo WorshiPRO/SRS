@@ -8,7 +8,9 @@ class Song(models.Model):
 	key_of_song = models.TextField(default='none')
 	highest_note = models.TextField(default='none')
 	lowest_note = models.TextField(default='none')
-	submission_date = models.DateTimeField(auto_now=True)
+	#submission_date = models.DateTimeField(auto_now=True)
+	submission_date = models.DateTimeField(default=datetime.date.today())
+
 
 	def is_empty(self):
 		return True if self is Song() else False
