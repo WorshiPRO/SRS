@@ -38,41 +38,6 @@
 				</button>
 
 				<!-- Modal -->
-				<div class="modal fade" id="showresult" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-				  <div class="modal-dialog modal-dialog-centered" role="document">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <h5 class="modal-title" >全部結果</h5>
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				          <span aria-hidden="true">&times;</span>
-				        </button>
-				      </div>
-				      <div class="modal-body">
-								<table class="table table-striped">
-								  <thead>
-								    <tr>
-								      <th scope="col">歌曲</th>
-								      <th scope="col">歌手/樂團/教會</th>
-								      <th scope="col">歌曲Key</th>
-								    </tr>
-								  </thead>
-								  <tbody>
-										{% for song in result %}
-								    <tr>
-								      <td>{{ song.song }}</td>
-								      <td>{{ song.owner }}</td>
-								      <td>{{ song.key_of_song }}</td>
-								    </tr>
-										{% endfor %}
-								  </tbody>
-								</table>
-				      </div>
-				      <div class="modal-footer">
-				      </div>
-				    </div>
-				  </div>
-				</div>
-				<!-- Modal -->
 				<div class="modal fade" id="loginmodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="modal-content">
