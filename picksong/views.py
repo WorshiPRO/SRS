@@ -43,7 +43,7 @@ def result(request):
 	if request.method == 'POST':
 		form = SongForm(request.POST)
 	result = []
-	for row in Song().objects.all():
+	for row in Song.objects.all():
 		hit = True
 		if form.cleaned_data['name'] != "":
 			if form.cleaned_data['name'] not in row.name:
