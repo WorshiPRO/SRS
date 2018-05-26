@@ -24,7 +24,7 @@ urlpatterns = [
 	path('', inputsong, name='index'),
     path('admin/', admin.site.urls),
 	path('hello/', hello_view, name='hello'),
-    path('inputsong/', inputsong),
+    path('inputsong/', inputsong, name='inputsong'),
     path('searchsong/', searchsong, name='searchsong'),
-    path('result/', result),
+    path('result/', result, name='result'),
 ]
