@@ -23,8 +23,8 @@ from picksong.views import result
 urlpatterns = [
 	path('', inputsong, name='index'),
     path('admin/', admin.site.urls),
-	path('hello/', hello_view),
+	path('hello/', hello_view, name='hello'),
     path('inputsong/', inputsong),
-    path('searchsong/', searchsong),
+    path('searchsong/', searchsong, name='searchsong'),
     path('result/', result),
 ]
