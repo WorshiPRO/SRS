@@ -73,3 +73,9 @@ def result(request):
 	n_info = len(result)
 	arg = {'result': result, 'number_of_info': n_info}
 	return render(request, 'result.html', arg)
+
+def all_result(request):
+	result = Song.objects.all()
+	n_info = len(result)
+	arg = {'result': result, 'number_of_info': n_info}
+	return render(request, 'result.html', arg)

@@ -27,4 +27,5 @@ urlpatterns = [
     path('inputsong/', inputsong, name='inputsong'),
     path('searchsong/', searchsong, name='searchsong'),
     path('result/', result, name='result'),
+    path('all_result/', all_result, name='all_result'),
 ]
