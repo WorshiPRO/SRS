@@ -19,6 +19,7 @@ from picksong.views import hello_view
 from picksong.views import inputsong
 from picksong.views import searchsong
 from picksong.views import result
+from picksong.views import all_result
 
 urlpatterns = [
 	path('', inputsong, name='index'),
