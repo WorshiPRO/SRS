@@ -26,13 +26,14 @@
 
 	    </ul>
 	    <form class="form-inline my-2 my-lg-0">
-				<button type="button" class="btn btn-success mr-3" data-toggle="modal" data-target="#showresult">
-					全部結果
-				</button>
-				<button type="button" class="btn btn-success mr-3" data-toggle="modal" data-target="#searchsong">
-					輸入歌曲資料
-				</button>
-
+				<form action="{% url 'searchsong' %}" method=post>
+					{% csrf_token %}
+	    		<input id="search" type="submit" value="尋找歌曲" class="btn btn-success mr-3" />
+				</form>
+				<form action="{% url 'all_result' %}" method=post>
+					{% csrf_token %}
+	    		<input id="all_result" type="submit" value="全部資料" class="btn btn-success mr-3" />
+				</form>
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginmodel">
   				登入
 				</button>
