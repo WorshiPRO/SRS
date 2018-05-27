@@ -46,23 +46,27 @@ def result(request):
 		for row in Song.objects.all():
 			hit = True
 			if form.is_valid():
+				print("[Status] views.py: form is valid")
 				if form.cleaned_data['name'] != "":
+					print("[Status] views.py: name isn't empty")
 					if form.cleaned_data['name'] not in row.name:
 						hit = False
 				if form.cleaned_data['owner'] != "":
+					print("[Status] views.py: owner isn't empty")
 					if form.cleaned_data['owner'] not in row.name:
 						hit = False
-				if form.cleaned_data['key'] != "":
-					if form.cleaned_data['key'] != row.key_of_song:
-						hit = False
-				if form.cleaned_data['highest'] != "":
-					if form.cleaned_data['highest'] != row.highest_note:
-						hit = False
-				if form.cleaned_data['lowest'] != "":
-					if form.cleaned_data['lowest'] != row.lowest_note:
-						hit = False
+				# if form.cleaned_data['key'] != "":
+				# 	if form.cleaned_data['key'] != row.key_of_song:
+				# 		hit = False
+				# if form.cleaned_data['highest'] != "":
+				# 	if form.cleaned_data['highest'] != row.highest_note:
+				# 		hit = False
+				# if form.cleaned_data['lowest'] != "":
+				# 	if form.cleaned_data['lowest'] != row.lowest_note:
+				# 		hit = False
 
 				if hit:
+					print("[Status] this row has hit")
 					result.append(row)
 		# sort somehow (1. in db 2. here)
 
