@@ -50,10 +50,12 @@ def result(request):
 				if form.cleaned_data['name'] != "":
 					print("[Status] views.py: name isn't empty")
 					if form.cleaned_data['name'] not in row.name:
+						print("[Status] views.py: name substr not found")
 						hit = False
 				if form.cleaned_data['owner'] != "":
 					print("[Status] views.py: owner isn't empty")
 					if form.cleaned_data['owner'] not in row.name:
+						print("[Status] views.py: owner substr not found")
 						hit = False
 				# if form.cleaned_data['key'] != "":
 				# 	if form.cleaned_data['key'] != row.key_of_song:
