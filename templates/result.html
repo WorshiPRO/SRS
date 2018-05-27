@@ -90,7 +90,7 @@
 			<tbody>
 				{% for song in result %}
 				<tr>
-					<td>{{ song.song }}</td>
+					<td>{{ song.name }}</td>
 					<td>{{ song.owner }}</td>
 					<td>{{ song.key_of_song }}</td>
 					<td>{{ song.highest_note }}</td>
@@ -101,7 +101,7 @@
 		</table>
 		<p>共{{number_of_info}}筆資料</p>
 	</div>
-	
+
 	<input class="btn btn-primary" action="{% url 'searchsong' %}" value="重新搜尋">
 
 
