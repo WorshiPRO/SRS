@@ -23,4 +23,4 @@ class SongForm(forms.Form):
         required=False,
         widget=forms.TextInput(attrs={'id': 'lowest',
                                       'class': 'form-control',
-                                      'placeholder':'輸入歌曲最高音 例如: D4(女)'}))
+                                      'placeholder':'輸入歌曲最低音 例如: D4(女)'}))
